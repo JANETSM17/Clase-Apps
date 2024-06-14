@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 
 export function Details({navigation, route}) {
 
-  const {height, weight, name, types, loading, error} = useSingularFetch(route.params.url)
+  const {height, weight, name, loading, error} = useSingularFetch(route.params.url)
   useEffect(() => {
-     console.log(height, weight, name, types, loading, error?.message)
+     console.log(height, weight, name, loading, error?.message)
   }, [loading])
     console.log(route?.params)
     useSingularFetch(route?.params)
@@ -15,7 +15,6 @@ export function Details({navigation, route}) {
 
     <View >
         <Text>Name: {name}</Text>
-        <Text>{"Type(s):"} {types} </Text>
         <Text>Height: {height}m</Text>
         <Text>Weight: {weight}kg</Text>
 
