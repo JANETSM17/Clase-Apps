@@ -2,12 +2,7 @@ import useSingularFetch from '@/hooks/useSingularFetch';
 import { StyleSheet, Text, TouchableOpacity, ViewProps, View } from 'react-native';
 import { useEffect } from 'react';
 
-type DetailsType = ViewProps & {
-  navigation:any,
-  route:any
-}
-
-export function Details({navigation, route}: DetailsType) {
+export function Details({navigation, route}) {
 
   const {height, weight, name, types, loading, error} = useSingularFetch(route.params.url)
   useEffect(() => {
